@@ -365,7 +365,7 @@
         },
         {
           "name":"DES",
-          "value": "2"
+          "value": "3"
         },
         {
           "name":"RES",
@@ -379,7 +379,7 @@
         },
         {
           "name":"DES",
-          "value": "2"
+          "value": "3"
         },
         {
           "name":"RES",
@@ -387,7 +387,7 @@
         },
         {
           "name":"CAR",
-          "value": "1"
+          "value": "2"
         },
         {
           "name":"MAN",
@@ -509,7 +509,7 @@
         },
         {
           "name": "pelea",
-          "value": "2"
+          "value": "3"
         },
         {
           "name": "superviv.",
