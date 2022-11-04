@@ -44,6 +44,8 @@ $ heroku logs --remote heroku-game --tail
 ## The Bible and others
 
 ```bash
+https://devcenter.heroku.com/articles/heroku-cli (install heroku)
+
 https://dev.to/alrobilliard/deploying-net-core-to-heroku-1lfe
 
 https://devcenter.heroku.com/articles/container-registry-and-runtime
