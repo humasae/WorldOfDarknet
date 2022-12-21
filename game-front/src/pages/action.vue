@@ -150,9 +150,12 @@ export default {
     ,
     transformacion (newForm) {
       // getNotifications.changeForm(JSON.stringify(newForm))
+      this.changeForm (newForm)
     },
     changeForm (newForm) {
-      const newFormReceived = JSON.parse(newForm)
+      console.log('lalalalalal')
+      // const newFormReceived = JSON.parse(newForm)
+      const newFormReceived = newForm
       this.statsArray.pjs.forEach(character => {
         if (character.name === newFormReceived.name) {
           character.image = `./img/${newFormReceived.name.toLowerCase()}-${newFormReceived.value}.png`
