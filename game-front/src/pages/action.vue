@@ -59,39 +59,39 @@ export default {
   },
   created() {
     const _self = this;
-    getNotifications.$on('playerJoin', progress => {
+    // getNotifications.$on('playerJoin', progress => {
       
-    });
-    getNotifications.$on('DiceRolls', diceRoll => {
-      const receivedRoll = JSON.parse(diceRoll)
-      if(receivedRoll.pj) {
-        this.diceValues = receivedRoll.values
-        this.name = receivedRoll.name
-        this.dificulty = parseInt(receivedRoll.dificulty)
-        this.spec = receivedRoll.spec ? true : false
-      }
-      else {
-        this.pnjDiceValues = receivedRoll.values
-        this.pnjName = receivedRoll.name
-        this.pnjDificulty = parseInt(receivedRoll.dificulty)
-        this.pnjSpec = receivedRoll.spec ? true : false
-      }
+    // });
+    // getNotifications.$on('DiceRolls', diceRoll => {
+    //   const receivedRoll = JSON.parse(diceRoll)
+    //   if(receivedRoll.pj) {
+    //     this.diceValues = receivedRoll.values
+    //     this.name = receivedRoll.name
+    //     this.dificulty = parseInt(receivedRoll.dificulty)
+    //     this.spec = receivedRoll.spec ? true : false
+    //   }
+    //   else {
+    //     this.pnjDiceValues = receivedRoll.values
+    //     this.pnjName = receivedRoll.name
+    //     this.pnjDificulty = parseInt(receivedRoll.dificulty)
+    //     this.pnjSpec = receivedRoll.spec ? true : false
+    //   }
       
-      // getNotifications.$off('DiceRolls')
-    });
-    getNotifications.$on('PlayerStats', playerStats => {
-      this.changeForm(playerStats);
-    });
-    const name = $nuxt.$store.getters[APP_GETTERS.PLAYER]
-    if(name) {
-      getNotifications.start(name['name'])
-      getNotifications.rollDices(`{"name": "${name['name']}", "values": [], "dificulty": 5, "spec": true, "pj": true}`)
-      getNotifications.changeForm(`{"name": "${name['name']}", "value": "zooooorrooooo"}`)
-    } else {
-      getNotifications.start('alexxx')
-      getNotifications.rollDices('{"name": "alex", "values": [], "dificulty": 5, "spec": true, "pj": true}')
-      getNotifications.changeForm('{"name": "alex", "value": "zooooorrooooo"}')
-    }
+    //   // getNotifications.$off('DiceRolls')
+    // });
+    // getNotifications.$on('PlayerStats', playerStats => {
+    //   this.changeForm(playerStats);
+    // });
+    // const name = $nuxt.$store.getters[APP_GETTERS.PLAYER]
+    // if(name) {
+    //   getNotifications.start(name['name'])
+    //   getNotifications.rollDices(`{"name": "${name['name']}", "values": [], "dificulty": 5, "spec": true, "pj": true}`)
+    //   getNotifications.changeForm(`{"name": "${name['name']}", "value": "zooooorrooooo"}`)
+    // } else {
+    //   getNotifications.start('alexxx')
+    //   getNotifications.rollDices('{"name": "alex", "values": [], "dificulty": 5, "spec": true, "pj": true}')
+    //   getNotifications.changeForm('{"name": "alex", "value": "zooooorrooooo"}')
+    // }
     
     
   },
@@ -109,7 +109,7 @@ export default {
         spec: diceSet.spec,
         pj: true
       }
-      getNotifications.rollDices(JSON.stringify(emitedRoll))
+      //getNotifications.rollDices(JSON.stringify(emitedRoll))
     },
     launchPnjDices(diceSet) {
       $nuxt.$store.commit(APP_MUTATIONS.DICEEMPTY)
@@ -124,7 +124,7 @@ export default {
         spec: diceSet.spec,
         pj: false
       }
-      getNotifications.rollDices(JSON.stringify(emitedRoll))
+      //getNotifications.rollDices(JSON.stringify(emitedRoll))
     },
     setDiceValue(name) {
       const dices = $nuxt.$store.getters[APP_GETTERS.DICETABLE]
@@ -132,7 +132,7 @@ export default {
         name: name,
         values: dices
       }
-      getNotifications.rollDices(JSON.stringify(emitedRoll))
+      // getNotifications.rollDices(JSON.stringify(emitedRoll))
     }, 
     rollDices () {
       const results = []
@@ -145,11 +145,11 @@ export default {
       return Math.floor(Math.random() * 10) + 1
     },
     sendChangeForm(newStats) {
-      getNotifications.changeForm(JSON.stringify(newStats))
+      // getNotifications.changeForm(JSON.stringify(newStats))
     }
     ,
     transformacion (newForm) {
-      getNotifications.changeForm(JSON.stringify(newForm))
+      // getNotifications.changeForm(JSON.stringify(newForm))
     },
     changeForm (newForm) {
       const newFormReceived = JSON.parse(newForm)
